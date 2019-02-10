@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Knock Me Out</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/App/Style/Alignment.css" rel="stylesheet" />
+
+    <script src="~/App/Startup/require.config.js"></script>
+    <script data-main="App/Startup/startup" src="~/App/Libs/require.js"></script>
+</head>
+<body>
+    <div>
+        <nav-bar params="route: route"></nav-bar>
+        <div id="page" class="container" data-bind="component: { name: route().page, params: route }"></div>
+    </div>
+    <div class="panel-footer">
+        <div class="container">
+            <div class="credit">&copy; knockout JS Learning 2015</div>
+        </div>
+    </div>
+</body>
+</html>

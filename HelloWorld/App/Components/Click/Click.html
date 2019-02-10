@@ -1,0 +1,8 @@
+﻿<div class="well margin-componenet">
+    <p>You have clicked <span data-bind="text:numberOfClicks" style="color:green"></span> times</p>
+    <button class="btn btn-primary" data-bind="click:registerClick, disable:hasClickedTooManyTimes">Click me</button>
+    <div data-bind="visible:hasClickedTooManyTimes">
+        <span>That's too many clicks! Please stop before you wear out your fingers.</span>
+        <button class="btn btn-danger" data-bind="click:resetClicks">RESET</button>
+    </div>
+</div>

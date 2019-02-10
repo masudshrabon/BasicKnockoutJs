@@ -1,0 +1,26 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <a class="navbar-brand" href="#">
+                <img src="Images/ko.PNG" style="height:50px; width:160px; margin-top:-14px"/>
+            </a>
+            <ul class="nav navbar-nav">
+                <li data-bind="css: { active: route().page === 'home' }">
+                    <a href="#home">Home</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'hello' }">
+                    <a href="#hello">Hello</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'click' }">
+                    <a href="#click">Click</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'simple-list' }">
+                    <a href="#list">List</a>
+                </li>
+                <li data-bind="css: { active: route().page === 'alignment' }">
+                    <a href="#alignment">Alignment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

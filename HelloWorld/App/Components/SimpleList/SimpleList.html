@@ -1,0 +1,44 @@
+﻿<div class="well margin-componenet">
+    <div>
+        <form>
+            New item:
+            <input data-bind="value: itemToAdd, valueUpdate:'afterkeydown'" />
+            <button class="btn btn-success" data-bind="enable:itemToAdd().length>0, click:addItem">Add</button>
+
+            <div class="container-fluid">
+                <h2 class="heading-title">Your items:</h2>
+                <!--<div class="panel panel-body panel-info" style="width:60%; min-height:120px; max-height:120px; overflow-y:scroll">
+                        <ul data-bind="foreach:items">
+                            <li data-bind="text:$data"></li>
+                        </ul>
+                    </div>-->
+                <div>
+                    <select multiple="multiple" style="width:50%; height:100px" data-bind="options:items, selectedOptions:selectedItems"> </select>
+                </div>
+                <button class="btn btn-danger" data-bind="click:removeItem, enable: selectedItems().length > 0">Remove</button>
+                <button class="btn btn-primary" data-bind="click:sortItems, enable:items().length>1">Sort</button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="row well">
+        <div class="btn-group pull-right">
+            <a href="#list" class="btn btn-primary" id="lists" data-bind="css:ListGridState">List</a>
+            <a href="#list/add" class="btn btn-primary" id="list-add" data-bind="css:ListAddState">Add List</a>
+        </div>
+    </div>
+
+    <div class="tab-content well">
+        <div id="list"  data-bind="visible:flag(),  css:ListGridState">
+            <list-grid params="route: $parent.route"></list-grid>
+        </div>
+        <div id="list/add" data-bind="visible:!flag(), css:ListAddState">
+            <div data-bind='component: {name: "list-add",params: { route: $parent.route}}'></div>
+            <list-add params="route: $parent.route"></list-add>
+        </div>
+
+    </div>
+   
+
+</div>
